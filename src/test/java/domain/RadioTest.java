@@ -46,10 +46,10 @@ public class RadioTest {
     public void shouldNextStation() {
         Radio station = new Radio();
 
-        station.setCurrentStation(5);
+        station.setCurrentStation(8);
         station.next();
 
-        int expected = 6;
+        int expected = 9;
         int actual = station.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
@@ -72,10 +72,10 @@ public class RadioTest {
     public void shouldPrevStation() {
         Radio station = new Radio();
 
-        station.setCurrentStation(5);
+        station.setCurrentStation(9);
         station.prev();
 
-        int expected = 4;
+        int expected = 8;
         int actual = station.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
