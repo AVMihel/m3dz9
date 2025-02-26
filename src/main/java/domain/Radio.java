@@ -1,91 +1,80 @@
 package domain;
 
-public class Radio {
 
-    private int currentStation;
-    private int currentVolume;
-    private int minStation;
-    private int maxStation;
-    private int minVolum;
-    private int maxVolume;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+    public class Radio {
+
+        private int currentStation;
+        private int currentVolume;
+        private int minStation;
+        private int maxStation;
+        private int minVolum;
+        private int maxVolume;
+
 
     public Radio() {
-        this.minStation = 0;
-        this.maxStation = 9;
-        this.minVolum = 0;
-        this.maxVolume = 100;
     }
 
-    public Radio(int newMaxStation) {
-        this.maxStation = newMaxStation - 1;
+    public Radio(int currentStation, int currentVolume, int minStation, int maxStation, int minVolum, int maxVolume) {
+        this.currentStation = currentStation;
+        this.currentVolume = currentVolume;
+        this.minStation = minStation;
+        this.maxStation = maxStation;
+        this.minVolum = minVolum;
+        this.maxVolume = maxVolume;
     }
 
     public int getCurrentStation() {
         return currentStation;
     }
 
-    public void setCurrentStation(int newCurrentStation) {
-        if (newCurrentStation < minStation) {
-            return;
-        }
-        if (newCurrentStation > maxStation) {
-            return;
-        }
-        currentStation = newCurrentStation;
-    }
-
-    public void next() {
-        if (currentStation == maxStation) {
-            currentStation = minStation;
-        } else {
-            currentStation = currentStation + 1;
-        }
-    }
-
-    public void prev() {
-
-        if (currentStation == minStation) {
-            currentStation = maxStation;
-        } else {
-            currentStation = currentStation - 1;
-        }
+    public void setCurrentStation(int currentStation) {
+        this.currentStation = currentStation;
     }
 
     public int getCurrentVolume() {
         return currentVolume;
     }
 
-    public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume < minVolum) {
-            newCurrentVolume = minVolum;
-        }
-        if (newCurrentVolume > maxVolume) {
-            newCurrentVolume = maxVolume;
-        }
-        currentVolume = newCurrentVolume;
+    public void setCurrentVolume(int currentVolume) {
+        this.currentVolume = currentVolume;
     }
 
-    public void increaseVolume() {
-        if (currentVolume < maxVolume) {
-            currentVolume = currentVolume + 1;
-        } else {
-            currentVolume = maxVolume;
-        }
+    public int getMinStation() {
+        return minStation;
     }
 
-    public void reductionVolume() {
-        if (currentVolume > minVolum) {
-            currentVolume = currentVolume - 1;
-        } else {
-            currentVolume = minVolum;
-        }
+    public void setMinStation(int minStation) {
+        this.minStation = minStation;
+    }
+
+    public int getMaxStation() {
+        return maxStation;
+    }
+
+    public void setMaxStation(int maxStation) {
+        this.maxStation = maxStation;
+    }
+
+    public int getMinVolum() {
+        return minVolum;
+    }
+
+    public void setMinVolum(int minVolum) {
+        this.minVolum = minVolum;
+    }
+
+    public int getMaxVolume() {
+        return maxVolume;
+    }
+
+    public void setMaxVolume(int maxVolume) {
+        this.maxVolume = maxVolume;
     }
 }
-
-
-
-
-
-
-
-
