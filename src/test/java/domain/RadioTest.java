@@ -7,6 +7,19 @@ public class RadioTest {
 
     // Переключение радиостанции
     @Test
+    public void shouldCurrentMaxStation() {
+        Radio station = new Radio(19);
+
+        station.setCurrentStation(14);
+
+        int expected = 14;
+        int actual = station.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+
+    }
+
+    @Test
     public void shouldStationNumber() {
         Radio station = new Radio();
 
@@ -159,3 +172,4 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 }
+
